@@ -1,0 +1,25 @@
+###
+# @name CriandoUmUsuario
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Murilao",
+    "email": "murilao@gmail.com",
+    "password": "123456",
+    "role": "NORMAL"
+}
+
+###
+# @name FazendoLogin
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "Joana@.com",
+    "password": "123456"
+}
+
+###
+
