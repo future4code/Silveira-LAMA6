@@ -61,15 +61,18 @@ export class UserBusiness {
                 throw new Error("User not found")
             }
 
-            const isPasswordCorrect = await this.hashGenerator.compareHash(password, userLogin.getPassword())
+            const isPasswordCorrect = await this.hashGenerator.compareHash(password, userLogin.password)
 
             if (!isPasswordCorrect) {
                 throw new Error("Invalid password")
             }
 
-            const token = await this.idGenerator.generateId()
+            const accessToken = this.tokenGenerator.generate({
+                id: userLogin.id,
+                role: userLogin.role
+            });
 
-            return token
+            return { accessToken };
 
         } catch (error: any) {
             throw new Error(error.sqlMessage || error.message)
@@ -83,10 +86,3 @@ export class UserBusiness {
 
 
 
-
-// export default new UserBusiness(
-//     new UserData(),
-//     new idGenerator(),
-//     new HashGenerator(),
-//     new TokenGenerator()
-//  )

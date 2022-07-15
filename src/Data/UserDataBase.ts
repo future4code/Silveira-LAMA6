@@ -27,5 +27,6 @@ export default class UserData extends BaseDatabase {
             .where({ email })
         return result[0]
     }
+    
 }
 

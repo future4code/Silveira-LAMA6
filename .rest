@@ -4,22 +4,67 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Murilao",
-    "email": "murilao@gmail.com",
+    "name": "Luciana",
+    "email": "luciana@gmail.com",
     "password": "123456",
-    "role": "NORMAL"
+    "role": "ADMIN"
 }
 
 ###
+@token = {{CriandoUmUsuario.response.body.token}}
+
 # @name FazendoLogin
 
-POST http://localhost:3003/login
+POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "Joana@.com",
+    "email": "luciana@gmail.com",
     "password": "123456"
 }
 
 ###
+@token = {{FazendoLogin.response.body.token}}
+# @name criandoBanda
 
+@token = {{.response.body.token}}
+
+POST http://localhost:3003/banda/create
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+   "name": "Creed",
+   "music_genre": "Pop-Rock", 
+   "responsible": "Scoot Stapp"
+}
+
+
+### 
+
+GET http://localhost:3003/banda/details/Coldplay
+Content-Type: application/json
+Authorization: {{token}}
+
+### 
+
+# @
+POST http://localhost:3003/show/reservate
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "week_day":"Domingo",
+    "start_time":"15",
+    "end_time": "16",
+    "band_id": "d1d21623-8063-486b-9d8d-e435a402987c"
+}
+
+###
+GET http://localhost:3003/show/lineUp
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "week_day":"Domingo"
+}
