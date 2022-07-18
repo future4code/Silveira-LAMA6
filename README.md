@@ -1,7 +1,7 @@
 ![header](https://cantodobatuque.com.br/wordpress/wp-content/uploads/2019/11/o-papel-de-cada-instrumento-em-uma-banda.jpg)
 # Projeto Lama 
 
-### Projeto inspirado em um *Festival Musical Awards*, com várias bandas famosas para a formatura podendo eleger a banda que mais gostar! Este projeto foi desenvolvido de forma impecável que permite o gerenciamento completo desses shows. 
+# Projeto inspirado em um *Festival Musical Awards*, com várias bandas famosas para a formatura podendo eleger a banda que mais gostar! Este projeto foi desenvolvido de forma impecável que permite o gerenciamento completo desses shows. 
 
 # Projeto realizado em 3 partes: utilizamos o banco de dados Workbanch para criação de 3 tabelas onde foram consumidas no código. 
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS NOME_TABELA_SHOWS (
   FOREIGN KEY(band_id) REFERENCES NOME_TABELA_BANDAS(id)
 )
 
-### Foi possível criar os endpoints:  
+# Foi possível criar os endpoints:  
 <tr>
 
 + Cadastro de Usuário (POST) 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS NOME_TABELA_SHOWS (
 + Adicionar um show à um dia (POST)
 + Pegar todos os shows de uma data ordenados por horário (GET)
 
-### Tecnologias utilizadas: 
+# Tecnologias utilizadas: 
 <tr>
 
 + Node.js
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS NOME_TABELA_SHOWS (
 + Request.Rest
 + Git
 
-### Linguagens e libs utilizadas: 
+# Linguagens e libs utilizadas: 
 <tr>
 
 + Typescript 
