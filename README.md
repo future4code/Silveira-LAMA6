@@ -69,5 +69,9 @@ CREATE TABLE IF NOT EXISTS NOME_TABELA_SHOWS (
 
 Este projeto foi realizado por 3 integrantes: Alessandra Sandeski Marmiroli, Graziela Queiroz e Maria Eduarda Pacheco Meireles. 
 
+## Documentação
+**Documentação do Projeto no Postman** 
+https://documenter.getpostman.com/view/20348592/UzXLyxmK
+
 
 
